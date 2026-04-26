@@ -1,0 +1,563 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- Hace que la web sea responsive en móvil -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portafolio | Alejandro Martínez</title>
+
+    <!-- Enlace al archivo de estilos principal -->
+     <link rel="stylesheet" href="styles/pallette.css">
+     <link rel="stylesheet" href="styles/styles.css">
+     <link rel="stylesheet" href="styles/components/buttons.css">
+     <link rel="stylesheet" href="styles/components/cards.css">
+     <link rel="stylesheet" href="styles/components/layout.css">
+
+</head>
+<body>
+    <!-- ===========================
+         FONDO CON GRADIENTES DIFUMINADOS
+         (Capas decorativas para la UI)
+    ============================ -->
+    <div class="bg-gradient bg-gradient-1"></div>
+    <div class="bg-gradient bg-gradient-2"></div>
+
+    <!-- ===========================
+         CABECERA / NAVBAR
+    ============================ -->
+    <header class="header">
+        <nav class="nav container">
+            <!-- Logo / nombre -->
+            <div class="nav__brand">
+                <!-- Nombre corto visible -->
+                <span class="nav__logo">AM</span>
+                <!-- Nombre largo discreto -->
+                <span class="nav__name">Alejandro Martínez</span>
+            </div>
+
+            <!-- Menú principal -->
+            <ul class="nav__menu">
+                <li><a href="#proyectos" class="nav__link">Proyectos</a></li>
+                <li><a href="#sobre-mi" class="nav__link">Sobre mí</a></li>
+                <li><a href="#habilidades" class="nav__link">Habilidades</a></li>
+                <li><a href="#experiencia" class="nav__link">Experiencia</a></li>
+                <li><a href="#blog" class="nav__link">Blog</a></li>
+                <li><a href="#contacto" class="nav__link nav__link--highlight">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===========================
+         SECCIÓN INICIO / HERO
+    ============================ -->
+    <main id="inicio" class="main">
+        <section class="hero container">
+            <!-- Columna de texto principal -->
+            <div class="hero__content">
+                <!-- Etiqueta pequeña sobre la especialidad -->
+                <span class="hero__tag">Enfocado en Ciberseguridad (en formación)</span>
+
+                <!-- Nombre principal -->
+                <h1 class="hero__title">Alejandro Martínez</h1>
+
+                <!-- Descripción corta (sin saturar) -->
+                <p class="hero__subtitle">
+                    Estudiante de Ingeniería en Desarrollo de Software, construyendo bases sólidas en desarrollo y ciberseguridad paso a paso.
+                </p>
+
+                <!-- Acciones principales (botones claros) -->
+                <div class="hero__actions">
+                    <!-- Este sí es un botón claro -->
+                    <a href="#proyectos" class="btn btn--primary">Proyectos destacados</a>
+                    <a href="#cv" class="btn btn--ghost"> CV </a>
+                </div>
+
+                <!-- Redes sociales principales (solo GitHub y LinkedIn) -->
+                <div class="hero__social">
+                    <span class="hero__social-label">Conecta conmigo</span>
+                    <div class="hero__social-links">
+                        <!-- GitHub real (luego colocas tu enlace) -->
+                        <a href="https://github.com/AlejandroMartinez" target="_blank" class="social-link">
+                            <!-- Ícono simple por ahora -->
+                            <span class="social-link__icon">GH</span>
+                            <span class="social-link__text">GitHub</span>
+                        </a>
+
+                        <!-- LinkedIn (aunque todavía no tengas, puedes dejarlo listo) -->
+                        <a href="#" class="social-link social-link--disabled">
+                            <span class="social-link__icon">in</span>
+                            <span class="social-link__text">LinkedIn (próximamente)</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Aficiones discretas (no protagonizan la página) -->
+                <div class="hero__tags">
+                    <!-- Chips pequeños, discretos -->
+                    <span class="chip">Dibujo</span>
+                    <span class="chip">Fotografía</span>
+                    <span class="chip">Guitarra</span>
+                </div>
+            </div>
+
+            <!-- Columna con espacio para foto -->
+            <div class="hero__photo">
+                <!-- Contenedor de imagen con borde -->
+                <div class="hero__photo-frame">
+                    <!-- Aquí luego pones tu foto real -->
+                    <img src="img/perfil.jpeg" alt="Foto de Alejandro" class="hero__img">
+                </div>
+                <p class="hero__photo-note">
+                    Espacio para tu foto profesional (opcional).
+                </p>
+            </div>
+        </section>
+
+        <!-- ===========================
+             SECCIÓN CV / CURRICULUM
+        ============================ -->
+        <section id="cv" class="section section--soft container">
+            <header class="section__header">
+                <h2 class="section__title">Currículum</h2>
+                <p class="section__subtitle">
+                    Visualiza o descarga mi cv.
+                </p>
+            </header>
+
+            <div class="cv">
+                <!-- Enlace al PDF (modifica la ruta cuando lo tengas) -->
+                <a href="assets/docs/CV_Alejandro_Martinez.pdf" target="_blank" class="cv__link">
+                    CV PDF
+                </a>
+            </div>
+        </section>
+
+        <!-- ===========================
+             SECCIÓN PROYECTOS DESTACADOS
+        ============================ -->
+        <section id="proyectos" class="section container">
+            <header class="section__header">
+                <h2 class="section__title">Proyectos destacados</h2>
+                <p class="section__subtitle">
+                    Proyectos que representan mejor mis habilidades actuales y en formación.
+                </p>
+            </header>
+
+            <div class="projects-grid">
+                <!-- ====== PROYECTO 1 ====== -->
+                <article class="project-card">
+                    <!-- Imagen representativa del proyecto -->
+                    <div class="project-card__image-wrapper">
+                        <img src="assets/img/proyecto1.png" alt="Proyecto 1" class="project-card__image">
+                    </div>
+
+                    <!-- Contenido del proyecto -->
+                    <div class="project-card__content">
+                        <h3 class="project-card__title"> ... </h3>
+                        <p class="project-card__description">
+                            ...
+                        </p>
+
+                        <!-- Tecnologías usadas -->
+                        <div class="project-card__tech">
+                            <span class="badge">...</span>
+                            <span class="badge">...</span>
+                            <span class="badge">...</span>
+                        </div>
+
+                        <!-- Enlaces de acción -->
+                        <div class="project-card__links">
+                            <a href="#" class="project-card__link">Ver código</a>
+                            <a href="#" class="project-card__link">Ver demo</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ====== PROYECTO 2 ====== -->
+                <article class="project-card">
+                    <div class="project-card__image-wrapper">
+                        <img src="assets/img/proyecto2.png" alt="Proyecto 2" class="project-card__image">
+                    </div>
+
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">...</h3>
+                        <p class="project-card__description">
+                            ...
+                        </p>
+
+                        <div class="project-card__tech">
+                            <span class="badge">...</span>
+                            <span class="badge">...</span>
+                            <span class="badge">...</span>
+                        </div>
+
+                        <div class="project-card__links">
+                            <a href="#" class="project-card__link">Ver código</a>
+                            <a href="#" class="project-card__link">Ver demo</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ====== PROYECTO 3 ====== -->
+                <article class="project-card">
+                    <div class="project-card__image-wrapper">
+                        <img src="assets/img/proyecto3.png" alt="Proyecto 3" class="project-card__image">
+                    </div>
+
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">...</h3>
+                        <p class="project-card__description">
+                            ...
+                        </p>
+
+                        <div class="project-card__tech">
+                            <span class="badge">...</span>
+                            <span class="badge">...</span>
+                            <span class="badge">...</span>
+                        </div>
+
+                        <div class="project-card__links">
+                            <a href="#" class="project-card__link">Ver código</a>
+                            <a href="#" class="project-card__link">Ver recursos</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Botón para ver más proyectos (claro que es botón) -->
+            <div class="section__actions">
+                <a href="#" class="btn btn--secondary">Ver más proyectos</a>
+            </div>
+        </section>
+
+        <!-- ===========================
+             SECCIÓN RECONOCIMIENTOS
+        ============================ -->
+        <section id="reconocimientos" class="section section--soft container">
+            <header class="section__header">
+                <h2 class="section__title">Reconocimientos y participación</h2>
+                <p class="section__subtitle">
+                    Proyectos, colaboraciones o logros que representan mi participación activa.
+                </p>
+            </header>
+
+            <div class="recognitions">
+                <!-- Reconocimiento 1 -->
+                <article class="recognition-card">
+                    <h3 class="recognition-card__title">Proyecto colaborativo académico</h3>
+                    <p class="recognition-card__description">
+                        Participación en proyecto de desarrollo de software con enfoque en documentación clara y trabajo en equipo.
+                    </p>
+                </article>
+
+                <!-- Reconocimiento 2 -->
+                <article class="recognition-card">
+                    <h3 class="recognition-card__title">Formación en ciberseguridad (en progreso)</h3>
+                    <p class="recognition-card__description">
+                        Construcción gradual de conocimientos en ciberseguridad a través de cursos, prácticas y autoaprendizaje.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ===========================
+             SECCIÓN SOBRE MÍ
+        ============================ -->
+        <section id="sobre-mi" class="section container">
+            <header class="section__header">
+                <h2 class="section__title">Sobre mí</h2>
+                <p class="section__subtitle">
+                    Un poco sobre quién soy y cómo trabajo.
+                </p>
+            </header>
+
+            <div class="about">
+                <!-- Texto breve, sin saturar -->
+                <p class="about__text">
+                    Soy Alejandro, estudiante de Ingeniería en Desarrollo de Software. Estoy construyendo mi perfil técnico con foco en bases sólidas, organización y documentación clara. Me gusta aprender de forma estructurada y aplicar lo que voy entendiendo en proyectos reales, aunque sean pequeños.
+                </p>
+                <p class="about__text">
+                    Disfruto equilibrar lo técnico con lo creativo: dibujo, fotografía y tocar guitarra son parte importante de mi vida.
+                </p>
+
+                <!-- Futuro dominio personalizado -->
+                <div class="about__domain">
+                    <span class="about__domain-label">Futuro dominio:</span>
+                    <span class="about__domain-value">alejandromartinez.dev (en planificación)</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===========================
+             SECCIÓN HABILIDADES
+        ============================ -->
+        <section id="habilidades" class="section section--soft container">
+            <header class="section__header">
+                <h2 class="section__title">Habilidades</h2>
+                <p class="section__subtitle">
+                    Habilidades actuales y en aprendizaje, organizadas por tipo.
+                </p>
+            </header>
+
+            <div class="skills-grid">
+                <!-- Habilidades técnicas actuales -->
+                <div class="skills-block">
+                    <h3 class="skills-block__title">Habilidades técnicas actuales</h3>
+                    <ul class="skills-list">
+                        <li class="skills-list__item">Fundamentos de programación</li>
+                        <li class="skills-list__item">HTML y CSS básicos</li>
+                        <li class="skills-list__item">Linux (uso básico y terminal)</li>
+                    </ul>
+                </div>
+
+                <!-- Habilidades técnicas en aprendizaje -->
+                <div class="skills-block">
+                    <h3 class="skills-block__title">Habilidades técnicas en aprendizaje</h3>
+                    <ul class="skills-list">
+                        <li class="skills-list__item">Ciberseguridad (conceptos introductorios)</li>
+                        <li class="skills-list__item">Java</li>
+                        <li class="skills-list__item">SQL</li>
+                        <li class="skills-list__item">Python</li>
+                    </ul>
+                </div>
+
+                <!-- Habilidades blandas -->
+                <div class="skills-block">
+                    <h3 class="skills-block__title">Habilidades blandas</h3>
+                    <ul class="skills-list">
+                        <li class="skills-list__item">Organización y documentación</li>
+                        <li class="skills-list__item">Aprendizaje autónomo</li>
+                        <li class="skills-list__item">Trabajo en equipo</li>
+                        <li class="skills-list__item">Responsabilidad y constancia</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===========================
+             SECCIÓN TECH STACK </>
+        ============================ -->
+        <section id="tech-stack" class="section container">
+            <header class="section__header">
+                <h2 class="section__title">Tech Stack &lt;/&gt;</h2>
+                <p class="section__subtitle">
+                    Tecnologías con las que estoy trabajando o aprendiendo.
+                </p>
+            </header>
+
+            <div class="stack">
+                <!-- Categoría Frontend -->
+                <div class="stack__group">
+                    <h3 class="stack__title">Frontend</h3>
+                    <div class="stack__chips">
+                        <span class="chip chip--stack">HTML</span>
+                        <span class="chip chip--stack">CSS</span>
+                        <span class="chip chip--stack">Responsive Design</span>
+                    </div>
+                </div>
+
+                <!-- Categoría Backend / Lenguajes -->
+                <div class="stack__group">
+                    <h3 class="stack__title">Lenguajes en aprendizaje</h3>
+                    <div class="stack__chips">
+                        <span class="chip chip--stack">Java</span>
+                        <span class="chip chip--stack">Python</span>
+                        <span class="chip chip--stack">SQL</span>
+                    </div>
+                </div>
+
+                <!-- Categoría Ciberseguridad -->
+                <div class="stack__group">
+                    <h3 class="stack__title">Ciberseguridad (iniciando)</h3>
+                    <div class="stack__chips">
+                        <span class="chip chip--stack">Linux</span>
+                        <span class="chip chip--stack">Conceptos básicos</span>
+                        <span class="chip chip--stack">Buenas prácticas</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===========================
+             SECCIÓN EXPERIENCIA
+        ============================ -->
+        <section id="experiencia" class="section section--soft container">
+            <header class="section__header">
+                <h2 class="section__title">Experiencia</h2>
+                <p class="section__subtitle">
+                    Lo que estoy aprendiendo y mi experiencia laboral.
+                </p>
+            </header>
+
+            <div class="experience-grid">
+                <!-- Experiencia de aprendizaje -->
+                <div class="experience-block">
+                    <h3 class="experience-block__title">Experiencia de aprendizaje</h3>
+                    <ul class="experience-list">
+                        <li class="experience-list__item">
+                            Proceso continuo de aprendizaje en desarrollo y ciberseguridad, con enfoque en bases sólidas.
+                        </li>
+                        <li class="experience-list__item">
+                            Prácticas y ejercicios personales para reforzar lógica, lenguajes y uso de herramientas.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Experiencia laboral (para mostrar que eres activo) -->
+                <div class="experience-block">
+                    <h3 class="experience-block__title">Experiencia laboral</h3>
+                    <ul class="experience-list">
+                        <li class="experience-list__item">
+                            ...
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===========================
+             SECCIÓN FORMACIÓN
+        ============================ -->
+        <section id="formacion" class="section container">
+            <header class="section__header">
+                <h2 class="section__title">Formación</h2>
+                <p class="section__subtitle">
+                    Estudios y cursos relevantes para mi desarrollo profesional.
+                </p>
+            </header>
+
+            <div class="education">
+                <!-- Carrera principal -->
+                <article class="education__item">
+                    <h3 class="education__title">Ingeniería en Desarrollo de Software</h3>
+                    <p class="education__detail">
+                        Formación enfocada en bases de programación, desarrollo y comprensión de sistemas.
+                    </p>
+                </article>
+
+                <!-- Cursos / extras -->
+                <article class="education__item">
+                    <h3 class="education__title">Cursos y autoaprendizaje</h3>
+                    <p class="education__detail">
+                        Complemento mi carrera con recursos en línea, documentación oficial y prácticas guiadas.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ===========================
+             SECCIÓN BLOG / ARTÍCULOS
+        ============================ -->
+        <section id="blog" class="section section--soft container">
+            <header class="section__header">
+                <h2 class="section__title">Blog, artículos y contribuciones</h2>
+                <p class="section__subtitle">
+                    Espacio para compartir lo que voy aprendiendo y construyendo.
+                </p>
+            </header>
+
+            <div class="blog-grid">
+                <!-- Entrada de ejemplo 1 -->
+                <article class="blog-card">
+                    <h3 class="blog-card__title">Notas de aprendizaje en Linux</h3>
+                    <p class="blog-card__excerpt">
+                        Resumen de comandos, conceptos y prácticas que me han ayudado a entender mejor el sistema.
+                    </p>
+                    <a href="#" class="blog-card__link">Ver artículo</a>
+                </article>
+
+                <!-- Entrada de ejemplo 2 -->
+                <article class="blog-card">
+                    <h3 class="blog-card__title">Primeros pasos en ciberseguridad</h3>
+                    <p class="blog-card__excerpt">
+                        Ideas y conceptos que voy descubriendo mientras me introduzco al mundo de la seguridad.
+                    </p>
+                    <a href="#" class="blog-card__link">Ver artículo</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- ===========================
+             SECCIÓN CONTACTO
+        ============================ -->
+        <section id="contacto" class="section container">
+            <header class="section__header">
+                <h2 class="section__title">Contacto</h2>
+                <p class="section__subtitle">
+                    Formas de contactarme directamente.
+                </p>
+            </header>
+
+            <div class="contact">
+                <!-- Gmail -->
+                <div class="contact__email">
+                    <span class="contact__label">Email</span>
+                    <span id="email-gmail" class="contact__value">alejandromtz200102@gmail.com</span>
+                    <span id="copy-gmail" class="contact__copy">Copiar correo</span>
+                </div>
+
+                <!-- Outlook -->
+                <div class="contact__email">
+                    <span class="contact__label">Outlook</span>
+                    <span id="email-outlook" class="contact__value">alejandromtz200102@outlook.com</span>
+                    <span id="copy-outlook" class="contact__copy">Copiar correo</span>
+                </div>
+
+                <!-- Opciones de envío -->
+                <div class="contact__channels">
+                    <span class="contact__label">Enviar por:</span>
+                    <div class="contact__links">
+                        <a href="mailto:alejandromtz200102@gmail.com" class="contact__link">Email</a>
+                        <a href="#" class="contact__link">WhatsApp</a>
+                        <a href="#" class="contact__link">Facebook</a>
+                    </div>
+                </div>
+
+                <div class="contact__note">
+                    También puedes escribirme a través de mis redes: GitHub y próximamente LinkedIn.
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- ===========================
+         FOOTER
+    ============================ -->
+    <footer class="footer">
+        <div class="footer__content container">
+            <span class="footer__text">© 2026 Alejandro Martínez</span>
+            <span class="footer__text">Portafolio en evolución, centrado en aprendizaje real.</span>
+        </div>
+    </footer>
+
+    <!-- ===========================
+         SCRIPT PEQUEÑO PARA COPIAR EMAIL
+         (Mejora de UX, no obligatorio)
+    ============================ -->
+    <script>
+        // Obtiene los elementos del DOM
+        const emailText = document.getElementById('email-text');
+        const copyEmail = document.getElementById('copy-email');
+        const copyEmail2 = document.getElementById('copy-email-2');
+
+        // Agrega evento de clic al texto "Copiar correo"
+        copyEmail.addEventListener('click', () => {
+            // Usa la API del portapapeles para copiar el texto
+            navigator.clipboard.writeText(emailText.textContent.trim())
+                .then(() => {
+                    // Cambia el texto un momento para dar feedback
+                    const original = copyEmail.textContent;
+                    copyEmail.textContent = 'Copiado';
+                    setTimeout(() => copyEmail.textContent = original, 1500);
+                })
+                .catch(err => {
+                    console.error('No se pudo copiar el correo:', err);
+                });
+        });
+    </script>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

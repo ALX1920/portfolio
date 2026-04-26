@@ -1,0 +1,255 @@
+
+/* CV */
+.cv {
+    padding: 18px 16px;
+    border-radius: var(--radius-card);
+    border: 1px solid var(--border-soft);
+    background: rgba(15,23,42,0.8);
+}
+
+.cv__hint {
+    margin-top: 6px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* PROYECTOS */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+}
+
+.project-card {
+    border-radius: var(--radius-card);
+    background: rgba(15,23,42,0.9);
+    border: 1px solid var(--border-soft);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card__image-wrapper {
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+    background: radial-gradient(circle at top, rgba(56,189,248,0.15), transparent 60%);
+}
+
+.project-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-card__content {
+    padding: 14px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.project-card__title {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.project-card__description {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.project-card__tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.project-card__links {
+    margin-top: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 0.85rem;
+}
+
+/* RECONOCIMIENTOS */
+.recognitions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+}
+
+.recognition-card {
+    border-radius: var(--radius-card);
+    background: rgba(15,23,42,0.9);
+    border: 1px solid var(--border-soft);
+    padding: 14px 16px;
+}
+
+.recognition-card__title {
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.recognition-card__description {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* SOBRE MÍ */
+.about {
+    border-radius: var(--radius-card);
+    background: rgba(15,23,42,0.9);
+    border: 1px solid var(--border-soft);
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.about__text {
+    font-size: 0.9rem;
+    color: var(--text-main);
+}
+
+.about__domain {
+    margin-top: 6px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.about__domain-label {
+    font-weight: 500;
+    margin-right: 4px;
+}
+
+/* HABILIDADES */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+}
+
+.skills-block {
+    border-radius: var(--radius-card);
+    background: rgba(15,23,42,0.9);
+    border: 1px solid var(--border-soft);
+    padding: 14px 16px;
+}
+
+.skills-block__title {
+    font-size: 1rem;
+    margin-bottom: 6px;
+}
+
+.skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.skills-list__item {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* TECH STACK */
+.stack {
+    border-radius: var(--radius-card);
+    background: rgba(15,23,42,0.9);
+    border: 1px solid var(--border-soft);
+    padding: 14px 16px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+}
+
+.stack__group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.stack__title {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.stack__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+/* EXPERIENCIA */
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+}
+
+.experience-block {
+    border-radius: var(--radius-card);
+    background: rgba(15,23,42,0.9);
+    border: 1px solid var(--border-soft);
+    padding: 14px 16px;
+}
+
+.experience-block__title {
+    font-size: 1rem;
+    margin-bottom: 6px;
+}
+
+.experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.experience-list__item {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* FORMACIÓN */
+.education {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+}
+
+.education__item {
+    border-radius: var(--radius-card);
+    background: rgba(15,23,42,0.9);
+    border: 1px solid var(--border-soft);
+    padding: 14px 16px;
+}
+
+.education__title {
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.education__detail {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* BLOG */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+}
+
+.blog-card {
+    border-radius: var(--radius-card);
+    background: rgba(15,23,42,0.9);
+    border: 1px solid var(--border-soft);
+    padding: 14px 16px;
+}
+
+.blog-card__title {
+    font-size: 1rem
+}

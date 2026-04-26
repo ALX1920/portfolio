@@ -1,0 +1,35 @@
+
+/* ==========================================
+   PALETA & TEMA GENERAL
+   - Fondo negro suave
+   - Colores difuminados (azul, morado, verde)
+   - Iluminación cómoda para la vista
+========================================== */
+:root {
+    /* Colores base */
+    --bg-main: #020617;        /* Fondo principal oscuro */
+    --bg-soft: #020617;        /* Fondo suave para secciones */
+    --card-bg: #020617;        /* Fondo de tarjetas con borde */
+    --border-soft: #1f2937;
+    --text-main: #e5e7eb;
+    --text-muted: #9ca3af;
+
+    /* Colores acento (difuminados) */
+    --accent-blue: #38bdf8;
+    --accent-purple: #a855f7;
+    --accent-green: #22c55e;
+
+    /* Gradientes difuminados */
+    --gradient-1: radial-gradient(circle at top left, rgba(56,189,248,0.25), transparent 60%);
+    --gradient-2: radial-gradient(circle at bottom right, rgba(168,85,247,0.25), transparent 60%);
+
+    /* Botones */
+    --btn-primary-bg: #22c55e;
+    --btn-primary-bg-hover: #16a34a;
+    --btn-secondary-bg: #0f172a;
+    --btn-secondary-border: #38bdf8;
+
+    /* Otros */
+    --radius-card: 14px;
+    --radius-pill: 999px;
+}
