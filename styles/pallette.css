@@ -1,4 +1,3 @@
-
 /* ==========================================
    PALETA & TEMA GENERAL
    - Fondo negro suave
@@ -7,9 +6,9 @@
 ========================================== */
 :root {
     /* Colores base */
-    --bg-main: #020617;        /* Fondo principal oscuro */
-    --bg-soft: #020617;        /* Fondo suave para secciones */
-    --card-bg: #020617;        /* Fondo de tarjetas con borde */
+    --bg-main: #020617;
+    --bg-soft: #020617;
+    --card-bg: #020617;
     --border-soft: #1f2937;
     --text-main: #e5e7eb;
     --text-muted: #9ca3af;
