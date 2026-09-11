@@ -1,0 +1,10 @@
+/* ==========================================
+   MAIN.CSS
+   Punto de entrada único: importa el resto
+   de los archivos de estilos en orden.
+========================================== */
+@import url("pallette.css");
+@import url("styles.css");
+@import url("components/buttons.css");
+@import url("components/cards.css");
+@import url("components/layout.css");
