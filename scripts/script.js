@@ -1,4 +1,3 @@
-
 /* ============================================================
    ARCHIVO: script.js
    AUTOR: Alejandro Martínez
@@ -11,54 +10,65 @@
 /* ============================================================
    1. COPIAR CORREO AL PORTAPAPELES
    ------------------------------------------------------------
-   - Permite copiar el correo con un clic.
+   - Permite copiar el correo con clic o con teclado (Enter/Espacio),
+     ya que los botones usan role="button" en vez de <button>.
    - Da retroalimentación visual al usuario.
    ============================================================ */
 
-const gmailText = document.getElementById('email-gmail');
-const outlookText = document.getElementById('email-outlook');
-
-const copyGmail = document.getElementById('copy-gmail');
-const copyOutlook = document.getElementById('copy-outlook');
-
-// Función genérica para copiar
 function copiarTexto(elementoTexto, elementoBoton) {
     navigator.clipboard.writeText(elementoTexto.textContent.trim())
         .then(() => {
             const original = elementoBoton.textContent;
             elementoBoton.textContent = 'Copiado';
-            setTimeout(() => elementoBoton.textContent = original, 1500);
+            setTimeout(() => { elementoBoton.textContent = original; }, 1500);
         })
         .catch(err => console.error('Error al copiar:', err));
 }
 
-// Eventos
-copyGmail.addEventListener('click', () => copiarTexto(gmailText, copyGmail));
-copyOutlook.addEventListener('click', () => copiarTexto(outlookText, copyOutlook));
+function activarCopiado(idTexto, idBoton) {
+    const texto = document.getElementById(idTexto);
+    const boton = document.getElementById(idBoton);
+    if (!texto || !boton) return;
 
+    boton.addEventListener('click', () => copiarTexto(texto, boton));
+    boton.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            copiarTexto(texto, boton);
+        }
+    });
+}
+
+activarCopiado('email-gmail', 'copy-gmail');
+activarCopiado('email-outlook', 'copy-outlook');
 
 
 /* ============================================================
    2. ANIMACIONES SUAVES AL HACER SCROLL
    ------------------------------------------------------------
    - Hace que las secciones aparezcan suavemente.
-   - Mejora la experiencia sin afectar rendimiento.
+   - Si el navegador no soporta IntersectionObserver, se muestra
+     todo de inmediato (sin animación) para no dejar contenido oculto.
    ============================================================ */
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
+const elementosAnimados = document.querySelectorAll('.section, .project-card, .blog-card, .skills-block');
+
+if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // ya no hace falta seguir observando
+            }
+        });
+    }, {
+        threshold: 0.2
     });
-}, {
-    threshold: 0.2 // Se activa cuando el 20% del elemento es visible
-});
 
-// Selecciona todas las secciones que queremos animar
-document.querySelectorAll('.section, .project-card, .blog-card, .skills-block')
-    .forEach(el => observer.observe(el));
-
+    elementosAnimados.forEach(el => observer.observe(el));
+} else {
+    elementosAnimados.forEach(el => el.classList.add('visible'));
+}
 
 
 /* ============================================================
@@ -68,19 +78,15 @@ document.querySelectorAll('.section, .project-card, .blog-card, .skills-block')
    - Ideal para cuando vayas creando nuevos trabajos.
    ============================================================ */
 
-// Botón "Ver más proyectos"
-const verMasBtn = document.querySelector('.btn--secondary');
-
-// Contenedor de proyectos
+const verMasBtn = document.getElementById('btn-ver-mas-proyectos');
 const projectsGrid = document.querySelector('.projects-grid');
 
-// Proyectos adicionales (puedes agregar más luego)
 const proyectosExtra = [
     {
         titulo: "Proyecto adicional 1",
         descripcion: "Descripción breve del proyecto.",
         tecnologias: ["HTML", "CSS", "JS"],
-        imagen: "assets/img/proyecto-extra1.png",
+        imagen: "img/proyecto-extra1.png",
         codigo: "#",
         demo: "#"
     },
@@ -88,17 +94,17 @@ const proyectosExtra = [
         titulo: "Proyecto adicional 2",
         descripcion: "Otro proyecto que puedes agregar.",
         tecnologias: ["Python", "Linux"],
-        imagen: "assets/img/proyecto-extra2.png",
+        imagen: "img/proyecto-extra2.png",
         codigo: "#",
         demo: "#"
     }
 ];
 
-// Control para evitar duplicados
 let proyectosAgregados = false;
 
 if (verMasBtn && projectsGrid) {
-    verMasBtn.addEventListener('click', () => {
+    verMasBtn.addEventListener('click', (e) => {
+        e.preventDefault(); // es un <a href="#">, evita saltar al inicio
         if (proyectosAgregados) return;
 
         proyectosExtra.forEach(proyecto => {
@@ -107,7 +113,7 @@ if (verMasBtn && projectsGrid) {
 
             card.innerHTML = `
                 <div class="project-card__image-wrapper">
-                    <img src="${proyecto.imagen}" class="project-card__image">
+                    <img src="${proyecto.imagen}" alt="Captura de ${proyecto.titulo}" class="project-card__image">
                 </div>
 
                 <div class="project-card__content">
@@ -134,7 +140,6 @@ if (verMasBtn && projectsGrid) {
 }
 
 
-
 /* ============================================================
    4. EFECTO SUAVE EN EL MENÚ AL HACER SCROLL
    ------------------------------------------------------------
@@ -143,10 +148,8 @@ if (verMasBtn && projectsGrid) {
 
 const header = document.querySelector('.header');
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 20) {
-        header.classList.add('header--scrolled');
-    } else {
-        header.classList.remove('header--scrolled');
-    }
-});
+if (header) {
+    window.addEventListener('scroll', () => {
+        header.classList.toggle('header--scrolled', window.scrollY > 20);
+    });
+}
