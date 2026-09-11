@@ -1,5 +1,6 @@
-
-/* BOTONES */
+/* ==========================================
+   BOTONES
+========================================== */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -33,7 +34,9 @@
     background: rgba(15,23,42,0.8);
 }
 
-/* SOCIAL LINKS */
+/* ==========================================
+   SOCIAL LINKS
+========================================== */
 .social-link {
     display: inline-flex;
     align-items: center;
@@ -64,12 +67,9 @@
     transform: translateY(-1px);
 }
 
-.social-link--disabled {
-    opacity: 0.5;
-    cursor: default;
-}
-
-/* CHIPS */
+/* ==========================================
+   CHIPS / BADGES
+========================================== */
 .chip {
     font-size: 0.75rem;
     padding: 4px 10px;
@@ -83,7 +83,6 @@
     border-color: rgba(75,85,99,0.9);
 }
 
-/* BADGES */
 .badge {
     font-size: 0.75rem;
     padding: 3px 8px;
@@ -92,7 +91,9 @@
     border: 1px solid rgba(55,65,81,0.9);
 }
 
-/* LINKS INTERACTIVOS */
+/* ==========================================
+   LINKS INTERACTIVOS
+========================================== */
 .cv__link {
     display: inline-flex;
     padding: 7px 14px;
@@ -121,16 +122,19 @@
     color: var(--accent-blue);
 }
 
+.blog-card__link:hover {
+    text-decoration: underline;
+}
+
 .contact__copy {
     font-size: 0.8rem;
     padding: 4px 10px;
     border-radius: var(--radius-pill);
-    background: rgba(15,23,42,0.9); /* ← color original */
+    background: rgba(15,23,42,0.9);
     border: 1px solid var(--accent-blue);
     color: var(--accent-blue);
     cursor: pointer;
 }
-
 
 .contact__link {
     font-size: 0.85rem;
