@@ -75,7 +75,7 @@ if ('IntersectionObserver' in window) {
    3. MOSTRAR MÁS PROYECTOS (DINÁMICO)
    ------------------------------------------------------------
    - Permite agregar más proyectos sin recargar la página.
-   - Ideal para cuando vayas creando nuevos trabajos.
+   - Ideal para cuando se creen nuevos trabajos.
    ============================================================ */
 
 const verMasBtn = document.getElementById('btn-ver-mas-proyectos');
