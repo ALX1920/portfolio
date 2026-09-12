@@ -197,6 +197,5 @@ Ver punto 1.10. Se cambió de `querySelector('.btn--secondary')` a `getElementBy
 ## 5. Pendientes (no son errores, son contenido por completar)
 
 - Reemplazar la imagen y el contenido del **proyecto 3** (actualmente comentado en `index.html`).
-- Completar la sección **"Experiencia laboral"** (tiene un `...` como placeholder).
 - Subir el **CV real** en `https://cv.alejandromtz.dev` (o cambiar el enlace por la ruta correcta).
 - Considerar agregar un **favicon**.
