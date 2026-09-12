@@ -2,8 +2,10 @@ Documentación de cambios — Portafolio Alejandro Martínez
 
 Este documento detalla todos los problemas encontrados y las correcciones aplicadas al portafolio, organizadas por archivo. Sirve como referencia para el historial de commits y para entender el porqué de cada cambio.
 
+---
+
 1. index.html
-   1.1 Bug: IDs del script de copiar correo no coincidían
+   - 1.1 Bug: IDs del script de copiar correo no coincidían
 
 Problema: El <script> inline buscaba email-text, copy-email y copy-email-2, pero esos IDs no existían en el HTML (los reales eran email-gmail, copy-gmail, email-outlook, copy-outlook).
 
@@ -11,7 +13,7 @@ Efecto: document.getElementById() devolvía null. Al llamar .addEventListener() 
 
 Corrección: Se unificó toda la lógica de copiado en script.js, usando los IDs reales del HTML.
 
-1.2 Script inline duplicado
+- 1.2 Script inline duplicado
 
 Problema: Existía un <script> dentro del HTML que hacía exactamente lo mismo que script.js (que se cargaba justo después).
 
@@ -19,7 +21,7 @@ Efecto: Dos listeners distintos escuchando el mismo clic. No rompía nada de for
 
 Corrección: Se eliminó el bloque inline. Ahora script.js es la única fuente de verdad para esa función.
 
-1.3 Cinco hojas de estilo enlazadas por separado
+- 1.3 Cinco hojas de estilo enlazadas por separado
 
 Problema: El <head> tenía 5 <link rel="stylesheet"> distintos.
 
@@ -27,7 +29,7 @@ Efecto: Cualquier cambio en el orden o adición de un nuevo archivo CSS requerí
 
 Corrección: Ahora solo hay un <link> a styles/main.css, que a su vez importa los demás archivos vía @import (ver sección 2).
 
-1.4 Seguridad menor en enlaces externos
+- 1.4 Seguridad menor en enlaces externos
 
 Problema: Los enlaces con target="\_blank" (GitHub, LinkedIn, WhatsApp, CV) no tenían rel="noopener".
 
@@ -35,13 +37,13 @@ Efecto: La pestaña nueva podía acceder a window.opener de la pestaña original
 
 Corrección: Se agregó rel="noopener" a todos los enlaces externos.
 
-1.5 Accesibilidad de los botones "Copiar correo"
+- 1.5 Accesibilidad de los botones "Copiar correo"
 
 Problema: Los botones de copiar eran <span> sin ningún atributo de accesibilidad, por lo que no eran alcanzables ni operables con teclado.
 
 Corrección: Se agregó role="button" tabindex="0" a cada <span>, y en script.js se agregó soporte para activarlos con Enter/Espacio además del clic.
 
-1.6 Falta de meta información para SEO / redes sociales
+- 1.6 Falta de meta información para SEO / redes sociales
 
 Problema: No había <meta name="description"> ni etiquetas Open Graph.
 
@@ -49,25 +51,25 @@ Efecto: Si alguien compartía el link en redes sociales o WhatsApp, no se genera
 
 Corrección: Se agregaron <meta name="description">, og:title, og:description y og:type.
 
-1.7 Sección "Formación" sin acceso desde el menú
+- 1.7 Sección "Formación" sin acceso desde el menú
 
 Problema: La sección #formacion existía en el HTML pero no estaba enlazada en .nav\_\_menu.
 
 Corrección: Se agregó <li><a href="#formacion">Formación</a></li>.
 
-1.8 Typo en el nombre de un proyecto
+- 1.8 Typo en el nombre de un proyecto
 
 Problema: "ChonoCreatures" en vez de "ChronoCreatures" (título y descripción).
 
 Corrección: Corregido en ambos lugares.
 
-1.9 Rutas de imagen inconsistentes
+- 1.9 Rutas de imagen inconsistentes
 
 Problema: La mayoría de las imágenes usaban img/..., pero el proyecto 3 usaba assets/img/proyecto3.png.
 
 Corrección: Todas las rutas se unificaron bajo img/.
 
-1.10 Selector frágil para "Ver más proyectos"
+- 1.10 Selector frágil para "Ver más proyectos"
 
 Problema: script.js seleccionaba el botón con document.querySelector('.btn--secondary'), es decir, "el primer elemento con esa clase". Funcionaba solo porque había un único botón con esa clase en toda la página.
 
@@ -75,13 +77,13 @@ Efecto: Si en el futuro se agrega otro .btn--secondary antes en el DOM, el scrip
 
 Corrección: Se le dio id="btn-ver-mas-proyectos" al botón y el script ahora usa document.getElementById(...).
 
-1.11 Sin fallback para navegadores sin JavaScript
+- 1.11 Sin fallback para navegadores sin JavaScript
 
 Problema: El efecto de aparición al hacer scroll depende de que script.js agregue la clase .visible. Si el usuario tiene JS desactivado, las secciones se quedarían con opacity: 0 para siempre (invisibles).
 
 Corrección: Se agregó un bloque <noscript> que fuerza opacity: 1 !important en esos elementos cuando JS no está disponible.
 
-1.12 Proyecto 3 incompleto
+- 1.12 Proyecto 3 incompleto
 
 Problema: La tarjeta del proyecto 3 solo tenía ... como contenido y una imagen que no existía (proyecto3.png).
 
